@@ -23,7 +23,7 @@ function evalUserCode (code) {
     const result = func()
     return { success: true, result }
   } catch (error) {
-    return { success: false, error: error.message }
+    return { success: false }
   }
 }
 

@@ -54,7 +54,7 @@ const handlers = {
 window.addEventListener('message', (ev) => {
   const { console: consoleData } = ev.data
 
-  const payload = consoleData ? JSON.parse(consoleData.payload) : null
+  const payload = consoleData?.payload
   const type = consoleData?.type
 
   if (ev.source === $iframe.contentWindow) {

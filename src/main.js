@@ -122,9 +122,6 @@ function update ({ notReload } = {}) {
       .then(() => {
         iframe.setAttribute('src', Preview.getPreviewUrl())
       })
-      .catch(error => {
-        console.error('Execution error:', error)
-      })
   }
 
   updateCss()
