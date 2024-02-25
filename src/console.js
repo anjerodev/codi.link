@@ -38,7 +38,10 @@ const handlers = {
     $consoleList.appendChild(errorItem)
   },
   default: (payload, type) => {
-    const content = payload.find(isPrimitive) ? payload.join(' ') : payload.map(item => JSON.stringify(item)).join(' ')
+    const content = Number.isNaN(payload.find(isPrimitive)) || payload.find(isPrimitive)
+      ? payload.join(' ')
+      : payload.map(item => JSON.stringify(item)).join(' ')
+
     const listItem = createListItem(content, type)
     $consoleList.appendChild(listItem)
   },
