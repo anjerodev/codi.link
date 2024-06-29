@@ -37,6 +37,7 @@
       align-items: start;
       gap: 1em;
       padding: 0 0 0.5em 0.5em;
+      word-break: break-word;
 
       &:not(:last-child) {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);

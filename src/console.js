@@ -60,8 +60,15 @@ window.addEventListener('message', (ev) => {
   const payload = consoleData?.payload
   const type = consoleData?.type
 
+  if (!payload || !type) {
+    return
+  }
+
+  console.log({ payload, type })
+
   if (ev.source === $iframe.contentWindow) {
     const handler = handlers[type] || handlers.default
+    // handler(JSON.parse(payload), type)
     handler(payload, type)
   } else if (type === 'loop') {
     handlers.loop(payload)
